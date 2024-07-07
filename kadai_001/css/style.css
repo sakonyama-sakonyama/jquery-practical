@@ -1,0 +1,161 @@
+body {
+  background-color: #fff;
+  color: #000;
+   /* フォントの指定 */
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  /* 余白リセット */
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* -------------------------------------------------
+            ヘッダー
+   -------------------------------------------------*/
+/* max-width 980px */
+#header {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 16px;
+}
+#header-title {
+  font-size: 34px;
+  border: 1px solid #000;
+  padding: 0 20px;
+}
+#nav-pc {
+  display: flex;
+}
+#nav-pc li {
+  list-style: none;
+  font-size: 34px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+
+/* -------------------------------------------------
+            メイン
+   -------------------------------------------------*/
+/* -----------------
+   メインビジュアル　
+   ----------------*/
+.carousel {
+  margin: 0 auto;
+}
+.carouselImg {
+  width: 100%;
+}
+
+/* section共通設定 */
+/* max-width 820px  */
+/* opacity０から、スクロールでopacity1　にfedeInする　*/
+section {
+  max-width: 820px;
+  margin: 120px auto;
+  opacity: 0;
+}
+.fadeIn {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+section h2 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+/* -----------------
+   TOPに戻るボタン　
+   ----------------*/
+#scrollButton {
+  padding: 28px 24px;
+  position: fixed;
+  bottom: 38px;
+  right:20px;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0;
+}
+
+/* -----------------
+   アバウト　
+   ----------------*/
+.about-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-box > img {
+  width: 280px;
+  border-radius: 140px;
+  margin-right: 60px;
+}
+.about-explain {
+  width: 55%;
+}
+.about-explain > h3 {
+  font-size: 24px;
+}
+.about-explain > ul >li {
+  font-size: 18px;
+}
+
+/* -----------------
+   ワークス　
+   ----------------*/
+.works-box {
+  display: flex;
+  justify-content: space-around;
+}
+.works-item {
+  width: 30%;
+}
+.works-img {
+  width: 100%;
+}
+
+/* -------------------------------------------------
+            フッター
+   -------------------------------------------------*/
+#footer {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ==========================
+          メディアクエリ
+   ========================== */
+@media screen and (max-width:767px){
+#header-title {
+  font-size: 28px;
+}
+#nav-pc li {
+  font-size: 21px;
+}
+section h2 {
+  margin-bottom: 40px;
+}
+.about-box , .works-box{
+  flex-direction: column;
+}
+.about-box > img {
+  margin: 40px auto;
+}
+.works-item {
+  width: 80%;
+  margin: 0px auto 40px;
+}
+}
