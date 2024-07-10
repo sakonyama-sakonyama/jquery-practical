@@ -8,9 +8,9 @@ $(function(){
     //次の画像に移るスピード
     dots: true,
     infinite: true,
-    speed: 1000,
-    //フェードするスピード
     fade: true,
+    //フェードするスピード
+    speed: 1000,
     cssEase: 'linear',
     //イージング（動きの加減速）:リニア（等速）
   });
@@ -64,30 +64,30 @@ $(function(){
     const windowHeight = $(window).height();    //画面の高さ
     $('section').each(function(){
       const sectionPosition = $(this).offset().top;//セクションの上からの高さ
-      if(windowScroll > windowHeight - sectionPosition + 200) {
+      if(windowScroll > sectionPosition - windowHeight + 200) {
+        //スクロールの距離が、「セクションの上からの位置　-　ウィンドウの高さ + 200px」より大きいとき
         $(this).addClass('fadeIn')
       }
     }); 
+  });   
+
+  /* ------------------------ 
+  ワークス　モーダルウィンドウ
+  -------------------------- */
+  //クリックしたらモーダルウィンドウが起動する
+  $('.works-img').click(function(){
+    const modalImage = $(this).attr('src');
+    console.log(modalImage);
+    $('#modalImage').attr('src',modalImage);
+    $('#modal').css('display','block'); 
+    //背景がスクロールしないようにする
+    $('html, body').css('overflow', 'hidden');
   });
-  /* addClass('fadeIn') 　が、　about → works　の順についてくれず、
-     works に先にクラスが付与されて、その後に　about にクラスが付与されます。
-     どうしてなのでしょうか?　*/
-
-
-
-
-
-
-
-    
-  
-
-
-    
-    
-
-  
-
-
+  //closeボタンをクリックしたら、モーダルウィンドウが閉じる
+  $('#modalClose').click(function(){
+    $('#modal').css('display','none');
+    //背景のスクロールしない状態を解除する
+    $('html, body').removeAttr('style');
+  });
   
 });
